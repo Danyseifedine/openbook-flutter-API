@@ -25,6 +25,6 @@ Welcome to OpenBook, a mobile application developed with Flutter that provides u
 
 ## Getting Started
 
-1- Clone the Repository: Clone the OpenBook mobile application repository to your local machine.
-2- Install Dependencies: Navigate to the project directory and run flutter pub get to install the necessary dependencies.
-3- Run the Application: Use flutter run to launch the application on your device or emulator.
+- Clone the Repository: Clone the OpenBook mobile application repository to your local machine.
+- Install Dependencies: Navigate to the project directory and run flutter pub get to install the necessary dependencies.
+- Run the Application: Use flutter run to launch the application on your device or emulator.
