@@ -6,21 +6,21 @@
 
 Welcome to OpenBook, a mobile application developed with Flutter that provides users with access to a wide range of free PDF books. OpenBook offers a seamless experience with features like user registration, login, book translation, and free PDF downloads.
 
-## Features
+# Features
 
-# Authentication
+### Authentication
 - Registration and Login: Secure user registration and login with full validation for access.
 
-# Book Library
+### Book Library
 - Wide Range of Books: Access a vast collection of books across various genres and categories.
 - Search Functionality: Easily search for books by title, author, or category.
 
-# Book Details
+### Book Details
 - Book Information: View detailed information about each book, including cover, title, author, description, and publication year.
 - Download PDF: Download books as PDF files for free and read offline.
 - Translation: Translate book content into multiple languages for a better reading experience.
 
-# User Interface
+### User Interface
 - Easy to Use: Designed with a very easy-to-use and straightforward interface, ensuring users can navigate the app effortlessly.
 
 ## Getting Started
