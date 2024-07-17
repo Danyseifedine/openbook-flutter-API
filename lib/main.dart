@@ -10,8 +10,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool onboardingCompleted = prefs.getBool('onboarding') ?? false;
-  prefs.clear();
-  final token = getToken();
   runApp(App(
     onboarding: onboardingCompleted,
   ));

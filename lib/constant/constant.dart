@@ -7,6 +7,7 @@ const pdfUrl = 'http://192.168.0.113:8000/pdfs';
 const loginUrl = '$baseUrl/login';
 const registerUrl = '$baseUrl/register';
 const getUserUrl = '$baseUrl/user';
+const search = '$baseUrl/search';
 const getAllBooks = '$baseUrl/books';
 const serverError = 'SERVER ERROR';
 const unauthorized = 'Unauthorized';

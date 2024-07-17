@@ -1,3 +1,4 @@
+import 'package:anonymy/screens/search.dart';
 import 'package:flutter/material.dart';
 import 'package:anonymy/models/api_response.dart';
 import 'package:anonymy/models/books.dart';
@@ -86,16 +87,22 @@ class _HomeState extends State<Home> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        selectedItemColor: Color(0xFF3F51B5),
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
-        currentIndex: 0,
         onTap: (index) {
-          // Handle bottom navigation tap
+
+          if (index == 1) { // Index 1 corresponds to the Search button
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SearchPage()),
+            );
+          }else{
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Home()));
+          }
         },
       ),
     );

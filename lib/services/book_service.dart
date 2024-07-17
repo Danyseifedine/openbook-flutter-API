@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:anonymy/constant/constant.dart';
 import 'package:anonymy/models/api_response.dart'; // Assuming you have ApiResponse defined
 import 'package:anonymy/models/books.dart';
+import 'package:anonymy/models/searchBooks_response.dart';
 import 'package:anonymy/services/user_service.dart';
 import 'package:http/http.dart' as http;
 
@@ -44,6 +45,48 @@ Future<ApiResponse> getBooks() async {
 
         // Assign BookResponse to apiResponse.data
         apiResponse.data = bookResponse;
+        break;
+
+      case 422:
+        final errors = jsonDecode(response.body)['errors'];
+        apiResponse.error = errors;
+        break;
+
+      case 403:
+        apiResponse.error = jsonDecode(response.body)['message'];
+        break;
+
+      default:
+        apiResponse.error = somethingWentWrong;
+    }
+  } catch (e) {
+    apiResponse.error = serverError;
+  }
+
+  return apiResponse;
+}
+
+Future<ApiResponse> searchBooks(String query) async {
+  ApiResponse apiResponse = ApiResponse();
+
+  try {
+    String token = await getToken();
+    final response = await http.get(
+      Uri.parse('$search?query=$query'),
+      headers: {
+        'Authorization': 'Bearer $token'
+      },
+    );
+
+    switch (response.statusCode) {
+      case 200:
+        var jsonData = jsonDecode(response.body);
+
+        // Create a SearchBookResponse object with search results
+        SearchBookResponse searchBookResponse = SearchBookResponse.fromJson(jsonData);
+
+        // Assign SearchBookResponse to apiResponse.data
+        apiResponse.data = searchBookResponse;
         break;
 
       case 422:
